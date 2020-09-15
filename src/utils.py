@@ -17,7 +17,7 @@ def SIR_model(y_data, population):
     ydata = np.array(y_data)
     t = np.arange(len(ydata))
 
-    N0 = population
+    N0 = 130000000
     I0=ydata[0]
     S0=N0-I0
     R0=0
@@ -27,7 +27,7 @@ def SIR_model(y_data, population):
     
     fit_odeint(t, *popt)
 
-    popt, pcov = optimize.curve_fit(fit_odeint, t, ydata)
+    popt, pcov = optimize.curve_fit(fit_odeint, t, ydata, bounds=(0,[.6,.2]))
     perr = np.sqrt(np.diag(pcov))
 
     print('standard deviation errors : ',str(perr), ' start infect:',ydata[0])

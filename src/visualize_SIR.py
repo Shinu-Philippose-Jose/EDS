@@ -44,7 +44,7 @@ def update_SIR_figure(country_drop_down):
     df_plot = df_analyse[df_analyse['country'] == country_drop_down]
     df_plot = df_plot[['state', 'country', 'confirmed', 'date']].groupby(['country', 'date']).agg(np.sum).reset_index()
     df_plot.sort_values('date', ascending = True).head()
-    df_plot = df_plot.confirmed[35:]
+    df_plot = df_plot.confirmed[55:]
 
     population = df_population[df_population['COUNTRY'] == country_drop_down]['Value'].values[0]
 
