@@ -16,7 +16,7 @@ def get_johns_hopkins():
     '''
     git_repo = 'https://github.com/CSSEGISandData/COVID-19.git'
     git_clone = subprocess.Popen( "git clone " + git_repo ,
-                             cwd = os.path.dirname( '../data/raw/COVID-19/' ),
+                             cwd = os.path.dirname( '../data/raw/' ),
                              shell = True,
                              stdout = subprocess.PIPE,
                              stderr = subprocess.PIPE )
